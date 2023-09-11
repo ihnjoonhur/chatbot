@@ -51,3 +51,15 @@ const messagesList = document.querySelector('.messages-list');
         messagesList.appendChild(messageItem);
       });
   });
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const newChatButton = document.querySelector('.new-chat');
+
+    newChatButton.addEventListener('click', () => {
+    const messages = document.querySelectorAll('.message');
+    messages.forEach(message => {
+        message.remove();
+        });
+    });
+});

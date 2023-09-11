@@ -57,4 +57,11 @@ body, html {
     flex-direction: column;
   }
 
-  
+  .new-chat {
+    position: absolute;
+    right: 10px;  /* Adjust as needed */
+    top: 50%;  
+    transform: translateY(-50%);  /* Vertically center the button */
+    padding: 5px 10px;  /* Adjust padding to make the button smaller or bigger */
+    font-size: 0.8em;  /* Adjust font size */
+}
