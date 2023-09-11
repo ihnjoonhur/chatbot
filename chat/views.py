@@ -38,7 +38,16 @@ def chatbot(request):
 def login(request):
     if request.method == 'POST':
         username = request.POST['username']
-    return render(request, 'login.html')
+        password = request.POST['password']
+        user = auth.authenticate(request, username=username, password=password)
+        if user is not None:
+            auth.login(request, user)
+            return redirect('chatbot')
+        else:
+            error_message = 'Invalid Username or Password'
+            return render(request, 'login.html', {'error_message': error_message})
+    else:
+        return render(request, 'login.html')
 
 def register(request):
     if request.method == 'POST':
@@ -62,4 +71,5 @@ def register(request):
     return render(request, 'register.html')
 
 def logout(request):
-    return render(request)
+    auth.logout(request)
+    return redirect('login')
