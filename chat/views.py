@@ -7,7 +7,7 @@ import openai
 import os  # Add this to use environment variables
 
 # Secure your API key by using environment variables or Django's secrets
-openai_api_key = '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'
+openai_api_key = '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'
 openai.api_key = openai_api_key
 
 
